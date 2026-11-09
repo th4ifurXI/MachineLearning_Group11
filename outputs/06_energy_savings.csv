@@ -1,0 +1,4 @@
+detection_point,E_remaining_kWh_per_wafer,TP,FP,saved_on_faults_kWh,spent_on_inspections_kWh,E_saved_kWh,CO2e_avoided_kg,E_saved_kWh_per_1000_wafers,CO2e_t_per_1000_wafers
+30%,314.91,3,16,944.74,71.98,872.76,645.84,2788.37,2.06
+50%,224.94,3,16,674.81,71.98,602.83,446.1,1925.99,1.43
+70%,134.96,3,16,404.89,71.98,332.91,246.35,1063.6,0.79

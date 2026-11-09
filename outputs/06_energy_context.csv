@@ -1,0 +1,5 @@
+policy,TP,FP,E_saved @ 30% (kWh),E_saved @ 50% (kWh),E_saved @ 70% (kWh),share of perfect @ 30%,share of perfect @ 50%,share of perfect @ 70%
+Perfect detector,17,0,5353.53,3823.95,2294.37,1.0,1.0,1.0
+Random forest @ 5:1 threshold,0,0,0.0,0.0,0.0,0.0,0.0,0.0
+Random forest @ 10:1 threshold,3,16,872.76,602.83,332.91,0.16,0.16,0.15
+Random forest @ 20:1 threshold,4,59,994.23,634.33,274.42,0.19,0.17,0.12

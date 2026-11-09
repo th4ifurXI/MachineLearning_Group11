@@ -1,0 +1,11 @@
+,shap_rank,mean_abs_shap,perm_rank,perm_importance,perm_sd,high_value_means,r_with_label_raw (train),missing_%_raw (train)
+f059,1,0.0843,8,0.0035,0.0225,higher fail risk,0.1715,0.5582
+f033,2,0.0302,1,0.0073,0.0193,higher fail risk,0.0866,0.0797
+f460,3,0.028,19,-0.012,0.0175,higher fail risk,0.0702,0.0797
+f290,4,0.0246,20,-0.0208,0.016,higher fail risk,-0.0008,0.7974
+f000,5,0.0192,6,0.0039,0.0084,lower fail risk,-0.0798,0.4785
+f103,6,0.0191,3,0.0055,0.0054,higher fail risk,0.1281,0.1595
+f333,7,0.019,18,-0.0088,0.0113,higher fail risk,0.062,0.4785
+f021,8,0.0172,13,-0.0029,0.0135,higher fail risk,0.1174,0.1595
+f152,9,0.0146,5,0.0041,0.0043,higher fail risk,-0.0054,0.0
+f205,10,0.0133,17,-0.0055,0.0064,higher fail risk,0.0628,0.4785
