@@ -54,7 +54,7 @@ def load_secom(
 
     df = pd.concat([meta, features], axis=1)
     df = df.sort_values(TIME_COL, kind="stable").reset_index(drop=True)
-    return df
+    return df.copy()  # consolidate memory blocks (avoids pandas fragmentation warnings)
 
 
 def split_xy(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:

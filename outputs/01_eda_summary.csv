@@ -1,0 +1,26 @@
+Metric,Value
+Wafers (rows),1567
+Sensor features,590
+Pass wafers,1463
+Fail wafers,104
+Fail rate (%),6.64
+Imbalance ratio (pass:fail),14.07 : 1
+Missing cells (% of all),4.54
+Features with any missing,538
+Features >50% missing,28
+Features >80% missing,8
+Constant features,116
+Non-constant features,474
+Highly correlated pairs (|r|>0.95),329
+Features in a |r|>0.95 pair,309
+Highly skewed features (|skew|>1),322
+Median |skew|,2.54
+Outlier values >3 SD (% of observed),0.87
+Features with >=1 outlier,440
+Wafers with >=1 outlier,1265
+Date range,19 Jul 2008 to 17 Oct 2008
+Months covered,4
+Highest monthly fail rate (%),22.22 (2008-07)
+Lowest monthly fail rate (%),2.88 (2008-09)
+Max |r| with label,0.156
+Top feature by |r| with label,f059 (r = 0.156)
