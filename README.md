@@ -29,20 +29,25 @@ notebooks/
   01_EDA.ipynb            Class balance, missingness, distributions, fail rate over time
   02_Preprocessing.ipynb  80/20 time-ordered split; fits and saves the preprocessing pipeline
   03_Feature_Selection.ipynb  ANOVA / mutual info / L1 / RF importance vs PCA; saves selected features
-  04_Modelling.ipynb      LR, SVM, RF, XGBoost x (class weights | SMOTE), RandomizedSearchCV on PR-AUC
-  05_Evaluation.ipynb     Standard metrics + energy-aware cost, threshold tuning
+  04_Modelling.ipynb      LR, SVM, RF, XGBoost x (class weights | SMOTE), RandomizedSearchCV on PR-AUC,
+                          time-ordered CV (TimeSeriesSplit(4))
+  05_Evaluation.ipynb     Cost-optimal thresholds (OOF), test-set metrics, 5:1/10:1/20:1 sensitivity, drift check
   06_Interpretation.ipynb SHAP explanations
 src/
   config.py               Paths and RANDOM_STATE = 42
   data_loader.py          load_secom(), split_xy()
-  metrics.py              Energy-aware cost metric, threshold search, sklearn scorer
+  cost_metric.py          Energy cost (FN x C_FN + FP x C_FP), cost curves, best threshold, evaluate()
+  metrics.py              Old names for the cost metric (kept so 04 still runs)
   preprocessing.py        time_train_test_split(), build_preprocessing_pipeline() and custom drop steps
   plotting.py             Shared chart style and save_fig() (300 dpi)
+  validation.py           time_cv() (TimeSeriesSplit(4)) and time_oof_scores() for time-ordered CV
 outputs/
   figures/                Saved plots for the report
   models/                 selected_features.json, best_models.json, CV results, rankings (committed);
                           *.joblib fitted objects (git-ignored - re-run 02 and 04 to create)
   04_cv_results.csv       Best CV scores per model x imbalance option (+ all_candidates version)
+  05_*.csv                Test results, cost sensitivity, tuned thresholds, test-set scores
+  *_shuffled_cv.csv       Earlier results from shuffled StratifiedKFold, kept for comparison
 ```
 
 The fitted `.joblib` files are not in git. After cloning, run `02_Preprocessing.ipynb` (needed by 03) and
@@ -71,7 +76,9 @@ X, y = split_xy(df)    # X = 590 sensor columns f000..f589
 
 - **Reproducibility:** use `RANDOM_STATE` from `src/config.py` (= 42) for every split, model and resampler.
 - **No leakage:** fit imputers/scalers/selectors/SMOTE on training data only (use `Pipeline`s).
-- **Cost metric:** `src/metrics.py` defaults to cost(FN) = 10, cost(FP) = 1. This ratio is an assumption —
+- **Validate forward in time:** use `src/validation.time_cv()`, not shuffled K-fold. The process drifts, and
+  shuffled CV gave optimistic scores (ROC-AUC ~0.73 vs ~0.6 on later wafers).
+- **Cost metric:** `src/cost_metric.py` defaults to cost(FN) = 10, cost(FP) = 1. This ratio is an assumption —
   report it and include a sensitivity analysis.
 - Save figures to `outputs/figures/` with descriptive names (e.g. `05_cost_vs_threshold.png`).
 

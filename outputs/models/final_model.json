@@ -1,0 +1,28 @@
+{
+  "model": "Random forest",
+  "file": "outputs/models/random_forest.joblib",
+  "imbalance": "Class weights",
+  "score": "P(fail)",
+  "thresholds": {
+    "5:1": 0.7223959103326945,
+    "10:1": 0.46690227461598804,
+    "20:1": 0.38597066936537494
+  },
+  "test_10to1": {
+    "imbalance": "Class weights",
+    "threshold": 0.4669,
+    "recall": 0.1765,
+    "precision": 0.1579,
+    "f1": 0.1667,
+    "f2": 0.1724,
+    "ber": 0.4388,
+    "roc_auc": 0.5884,
+    "pr_auc": 0.0943,
+    "accuracy": 0.9042,
+    "energy_cost": 156.0,
+    "normalized_cost": 0.9176,
+    "cv_pr_auc (04)": 0.1495
+  },
+  "cost_rank_5_10_20": "1 / 1 / 3",
+  "selection_rule": "lowest test energy cost at 10:1; robustness checked at 5:1 and 20:1; PR-AUC tie-break"
+}
