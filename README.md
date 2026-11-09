@@ -27,19 +27,25 @@ and time-ordered data (we split by time to avoid leakage).
 Dataset/                  Raw SECOM data (read-only)
 notebooks/
   01_EDA.ipynb            Class balance, missingness, distributions, fail rate over time
-  02_Preprocessing.ipynb  Time-based split, cleaning, imputation, scaling, imbalance handling
-  03_Feature_Selection.ipynb
-  04_Modelling.ipynb      Logistic Regression, Random Forest, XGBoost + tuning
+  02_Preprocessing.ipynb  80/20 time-ordered split; fits and saves the preprocessing pipeline
+  03_Feature_Selection.ipynb  ANOVA / mutual info / L1 / RF importance vs PCA; saves selected features
+  04_Modelling.ipynb      Logistic Regression, Random Forest, XGBoost + tuning (imbalance handling here)
   05_Evaluation.ipynb     Standard metrics + energy-aware cost, threshold tuning
   06_Interpretation.ipynb SHAP explanations
 src/
   config.py               Paths and RANDOM_STATE = 42
   data_loader.py          load_secom(), split_xy()
   metrics.py              Energy-aware cost metric, threshold search, sklearn scorer
+  preprocessing.py        time_train_test_split(), build_preprocessing_pipeline() and custom drop steps
+  plotting.py             Shared chart style and save_fig() (300 dpi)
 outputs/
   figures/                Saved plots for the report
-  models/                 Saved fitted models (git-ignored)
+  models/                 selected_features.json, CV results, rankings (committed);
+                          *.joblib fitted objects (git-ignored - re-run 02 to create)
 ```
+
+Notebooks 03–06 load `outputs/models/preprocessing_pipeline.joblib`, which is not in git. After cloning, run
+`02_Preprocessing.ipynb` once to create it.
 
 ## How to run
 

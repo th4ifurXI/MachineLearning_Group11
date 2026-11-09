@@ -17,6 +17,11 @@ TEXT_SECONDARY = "#52514e"
 GRID_COLOR = "#e4e3df"
 SURFACE = "#fcfcfb"
 
+# Fixed-order categorical palette for multi-series charts (assign in this order, never cycle)
+CATEGORICAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+# Sequential single-hue ramp (light -> dark) for heatmaps
+SEQUENTIAL_BLUES = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
+
 DPI = 300
 
 

@@ -24,6 +24,6 @@ Thumbs.db
 desktop.ini
 
 # Generated outputs (keep folder structure, ignore large artifacts)
-outputs/models/*
-!outputs/models/.gitkeep
+outputs/models/*.joblib
+outputs/models/*.pkl
 outputs/figures/*.tmp
