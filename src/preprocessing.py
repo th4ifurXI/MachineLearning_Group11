@@ -123,3 +123,13 @@ def build_preprocessing_pipeline(missing_threshold: float = 0.5, corr_threshold:
         ("drop_correlated", DropCorrelated(threshold=corr_threshold)),
     ])
     return pipe.set_output(transform="pandas")
+
+
+def preprocessing_steps(missing_threshold: float = 0.5, corr_threshold: float = 0.95) -> list:
+    """The same steps as ``build_preprocessing_pipeline`` as a flat list of (name, transformer).
+
+    imblearn's Pipeline (needed to put SMOTE inside CV folds) does not accept a nested
+    Pipeline, so use ``imblearn.pipeline.Pipeline(preprocessing_steps() + [...])``.
+    Each step is already configured to output pandas DataFrames.
+    """
+    return build_preprocessing_pipeline(missing_threshold, corr_threshold).steps

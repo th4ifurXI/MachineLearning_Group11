@@ -1,0 +1,62 @@
+{
+  "random_state": 42,
+  "cv": "StratifiedKFold(5, shuffle=True, random_state=42) on the training set",
+  "scoring": "average_precision (PR-AUC)",
+  "n_iter": 40,
+  "models": {
+    "XGBoost": {
+      "file": "outputs/models/xgboost.joblib",
+      "imbalance": "SMOTE",
+      "cv_pr_auc_mean": 0.2644,
+      "cv_pr_auc_std": 0.0908,
+      "cv_roc_auc_mean": 0.7186,
+      "best_params": {
+        "colsample_bytree": 0.5218018858772169,
+        "learning_rate": 0.2944907773341731,
+        "max_depth": 6,
+        "min_child_weight": 5,
+        "n_estimators": 105,
+        "reg_lambda": 0.5499426480345608,
+        "subsample": 0.606182646611547,
+        "smote_k_neighbors": 3
+      }
+    },
+    "Random forest": {
+      "file": "outputs/models/random_forest.joblib",
+      "imbalance": "Class weights",
+      "cv_pr_auc_mean": 0.2431,
+      "cv_pr_auc_std": 0.0998,
+      "cv_roc_auc_mean": 0.7485,
+      "best_params": {
+        "max_depth": null,
+        "max_features": 0.3,
+        "min_samples_leaf": 5,
+        "n_estimators": 330
+      }
+    },
+    "SVM (RBF)": {
+      "file": "outputs/models/svm_rbf.joblib",
+      "imbalance": "SMOTE",
+      "cv_pr_auc_mean": 0.2108,
+      "cv_pr_auc_std": 0.1125,
+      "cv_roc_auc_mean": 0.6632,
+      "best_params": {
+        "C": 2.950706670790534,
+        "gamma": 0.02796485951606245,
+        "smote_k_neighbors": 3
+      }
+    },
+    "Logistic regression": {
+      "file": "outputs/models/logistic_regression.joblib",
+      "imbalance": "Class weights",
+      "cv_pr_auc_mean": 0.2082,
+      "cv_pr_auc_std": 0.0725,
+      "cv_roc_auc_mean": 0.7222,
+      "best_params": {
+        "C": 0.13359166801651828,
+        "l1_ratio": 1
+      }
+    }
+  },
+  "best_overall": "XGBoost"
+}
