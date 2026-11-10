@@ -32,7 +32,8 @@ notebooks/
   04_Modelling.ipynb      LR, SVM, RF, XGBoost x (class weights | SMOTE), RandomizedSearchCV on PR-AUC,
                           time-ordered CV (TimeSeriesSplit(4))
   05_Evaluation.ipynb     Cost-optimal thresholds (OOF), test-set metrics, 5:1/10:1/20:1 sensitivity, drift check
-  06_Interpretation.ipynb SHAP + permutation importance (top 10 sensors); energy and CO2e savings
+  06_Interpretation.ipynb SHAP + permutation importance (top 10 sensors); error analysis of missed faults
+                          and false alarms; energy and CO2e savings
 src/
   config.py               Paths and RANDOM_STATE = 42
   data_loader.py          load_secom(), split_xy()
@@ -48,7 +49,7 @@ outputs/
   04_cv_results.csv       Best CV scores per model x imbalance option (+ all_candidates version)
   05_*.csv                Test results, cost sensitivity, tuned thresholds, test-set scores
   *_shuffled_cv.csv       Earlier results from shuffled StratifiedKFold, kept for comparison
-  06_*.csv                Top 10 sensors, energy savings, energy context and sensitivity tables
+  06_*.csv                Top 10 sensors, per-wafer error analysis, energy savings, context and sensitivity
 ```
 
 The fitted `.joblib` files are not in git. After cloning, run `02_Preprocessing.ipynb` (needed by 03) and
