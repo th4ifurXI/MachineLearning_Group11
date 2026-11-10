@@ -82,12 +82,3 @@ X, y = split_xy(df)    # X = 590 sensor columns f000..f589
 - **Cost metric:** `src/cost_metric.py` defaults to cost(FN) = 10, cost(FP) = 1. This ratio is an assumption —
   report it and include a sensitivity analysis.
 - Save figures to `outputs/figures/` with descriptive names (e.g. `05_cost_vs_threshold.png`).
-
-## Team roles
-
-| Member | Role | Main notebooks |
-|---|---|---|
-| _TBD_ | Project lead / data & EDA | 01_EDA |
-| _TBD_ | Preprocessing & feature selection | 02, 03 |
-| _TBD_ | Modelling & tuning | 04 |
-| _TBD_ | Evaluation & interpretation | 05, 06 |
