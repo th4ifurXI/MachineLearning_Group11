@@ -52,7 +52,7 @@ outputs/
 ```
 
 The fitted `.joblib` files are not in git. After cloning, run `02_Preprocessing.ipynb` (needed by 03) and
-`04_Modelling.ipynb` (~12 min; creates the four tuned models used by 05 and 06). Each saved model is a full
+`04_Modelling.ipynb` (~8 min; creates the four tuned models used by 05 and 06). Each saved model is a full
 pipeline: raw 590 sensors in, fail score out.
 
 ## How to run
