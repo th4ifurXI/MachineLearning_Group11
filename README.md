@@ -28,7 +28,8 @@ Dataset/                  Raw SECOM data (read-only)
 notebooks/
   01_EDA.ipynb            Class balance, missingness, distributions, fail rate over time
   02_Preprocessing.ipynb  80/20 time-ordered split; fits and saves the preprocessing pipeline
-  03_Feature_Selection.ipynb  ANOVA / mutual info / L1 / RF importance vs PCA; saves selected features
+  03_Feature_Selection.ipynb  ANOVA / mutual info / L1 / RF importance vs PCA (time-ordered CV);
+                          saves selected features
   04_Modelling.ipynb      LR, SVM, RF, XGBoost x (class weights | SMOTE), RandomizedSearchCV on PR-AUC,
                           time-ordered CV (TimeSeriesSplit(4))
   05_Evaluation.ipynb     Cost-optimal thresholds (OOF), test-set metrics, 5:1/10:1/20:1 sensitivity, drift check
