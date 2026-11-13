@@ -35,9 +35,6 @@ notebooks/
   05_Evaluation.ipynb     Cost-optimal thresholds (OOF), test-set metrics, 5:1/10:1/20:1 sensitivity, drift check
   06_Interpretation.ipynb SHAP + permutation importance (top 10 sensors); error analysis of missed faults
                           and false alarms; energy and CO2e savings
-  07_Drift_Retraining.ipynb  Drift-aware retraining: 12 refit schemes compared on training data only,
-                          weekly refits with a 30-day recency half-life scored once on the test set;
-                          recomputed energy, emissions and economics for the final system
 src/
   config.py               Paths and RANDOM_STATE = 42
   data_loader.py          load_secom(), split_xy()
@@ -46,7 +43,6 @@ src/
   preprocessing.py        time_train_test_split(), build_preprocessing_pipeline() and custom drop steps
   plotting.py             Shared chart style and save_fig() (300 dpi)
   validation.py           time_cv() (TimeSeriesSplit(4)) and time_oof_scores() for time-ordered CV
-  retraining.py           recency_weights(), rolling_scores() (prequential weekly/daily refits), static_fold_scores()
 outputs/
   figures/                Saved plots for the report
   models/                 selected_features.json, best_models.json, CV results, rankings (committed);
@@ -55,9 +51,6 @@ outputs/
   05_*.csv                Test results, cost sensitivity, tuned thresholds, test-set scores
   *_shuffled_cv.csv       Earlier results from shuffled StratifiedKFold, kept for comparison
   06_*.csv                Top 10 sensors, per-wafer error analysis, energy savings, context and sensitivity
-  07_*.csv                Refit-scheme comparison, static vs retrained test results, per-wafer outcomes,
-                          energy savings, context and sensitivity for the retrained system
-  models/final_system.json  Final system: random forest + weekly refits (30-day half-life), thresholds, test results
 ```
 
 The fitted `.joblib` files are not in git. After cloning, run `02_Preprocessing.ipynb` (needed by 03) and
@@ -73,7 +66,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Run the notebooks in order (01 → 07; a full run takes about 25 minutes). Each notebook's first cell adds the project root to `sys.path`
+Run the notebooks in order (01 → 06). Each notebook's first cell adds the project root to `sys.path`
 and loads the data:
 
 ```python
