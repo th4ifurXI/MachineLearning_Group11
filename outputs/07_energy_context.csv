@@ -1,0 +1,5 @@
+policy,TP,FP,E_saved @ 30% (kWh),E_saved @ 50% (kWh),E_saved @ 70% (kWh)
+Perfect detector,17,0,5353.5,3823.9,2294.4
+"Static random forest, 10:1",3,16,872.8,602.8,332.9
+"Retrained, 10:1 threshold",7,55,1957.0,1327.1,697.3
+"Retrained, 20:1 threshold",15,210,3779.0,2429.3,1079.7

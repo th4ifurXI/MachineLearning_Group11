@@ -1,0 +1,4 @@
+detection_point,E_remaining_kWh,net_kWh_test,CO2e_kg_test,net_kWh_per_1000,RM_per_1000,annual_MWh,annual_RM,annual_t_CO2e,annual_MWh_process_tools_only,static_net_kWh_test,perfect_net_kWh_test,breakeven_E_inspection_kWh,kWh_per_inspection,inspect_all_net_kWh,share_of_perfect,inspect_all_kWh_per_inspection
+30%,314.913,1956.961,1448.151,6252.271,2838.531,750.273,340623.737,555.202,303.11,872.76,5353.525,40.08,31.564,4021.892,0.366,12.849
+50%,224.938,1327.134,982.079,4240.046,1924.981,508.806,230997.707,376.516,205.557,602.834,3823.947,28.628,21.405,2492.313,0.347,7.963
+70%,134.963,697.308,516.008,2227.821,1011.431,267.338,121371.676,197.83,108.005,332.908,2294.368,17.177,11.247,962.735,0.304,3.076
